@@ -1,0 +1,24 @@
+{
+    "manifest_version": 2,
+    "name": "Google Search Fix",
+    "version": "1.0",
+    "description": "Fixes an issue with Google Search.",
+    "permissions": ["https://www.google.com/"],
+    "background": {
+      "scripts": ["background.js"],
+      "persistent": false
+    },
+    "content_scripts": [
+      {
+        "matches": [ "https://www.google.com/*" ],
+        "css": [
+          "styles.css"
+        ],
+        "js": [ "content.js" ]
+      }
+    ],
+    "browser_action": {
+      "default_icon": "icon.png",
+      "default_popup": "popup.html"
+    }
+  }
